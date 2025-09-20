@@ -41,7 +41,7 @@ int main(){
     fin.close();
 
     // demonstrate std array members and algorithms
-    cout << "the array's size: " << temperatures.size() << endl;
+    cout << "the Vector's size: " << temperatures.size() << endl;
     display(temperatures);
 
     if (!temps.empty()) {
