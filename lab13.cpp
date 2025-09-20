@@ -5,7 +5,6 @@
 using namespace std;
 #include <iostream>
 #include <fstream>
-#include <array>
 #include <vector>
 #include <algorithm>
 #include <numeric> // I found this one online for accumulation
@@ -14,7 +13,7 @@ using namespace std;
 
 constexpr size_t DAYS = 30;
 
-void display(const array<double, DAYS>& temps) {
+void display(const vector<double>& temps) {
     cout << "Temperatures: ";
 
     for (const auto& t : temps) cout << t << " ";
