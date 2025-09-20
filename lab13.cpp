@@ -67,7 +67,7 @@ int main(){
         cout << endl;
 
         vector<double> cdsnap(temperatures.size(), -10.0);// cold snap simulation
-        cout << "cold's snap simulation array: ";
+        cout << "cold's snap simulation vector*: ";
         for(const auto& t : cdsnap) cout << t << " ";
         cout << endl;
 
