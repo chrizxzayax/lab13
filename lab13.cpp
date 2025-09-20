@@ -23,9 +23,8 @@ void display(const array<double, DAYS>& temps) {
 }
 
 int main(){
-    vector<double> temps; // dynamic array
-
-    array<double, DAYS> temperatures{}; // initialize all to 0.0
+    vector<double> temperatures; // dynamic array
+// initialize all to 0.0
 
     ifstream fin("temp.txt");
     if(!fin){
@@ -34,7 +33,7 @@ int main(){
     }
     double value;
     while(fin >> value){
-        temps.push_back(value);
+        temperatures.push_back(value);
         //dynamically add to the vector
     }
 
@@ -44,12 +43,12 @@ int main(){
     cout << "the Vector's size: " << temperatures.size() << endl;
     display(temperatures);
 
-    if (!temps.empty()) {
+    if (!temperatures.empty()) {
         cout << "First day's temperature: " << temperatures.front() << endl;
         cout << "Last day's temperature: " << temperatures.back() << endl;
         
-        if (temps.size() >= 15)
-            cout << "15th day's temperature: " << temps[14] << endl; // direct access to 15th day
+        if (temperatures.size() >= 15)
+            cout << "15th day's temperature: " << temperatures.at(14) << endl; // direct access to 15th day
 
 
         // finding the min and max temperature
@@ -61,14 +60,13 @@ int main(){
         cout << "The average monthly temperature is: " << avge << endl;
 
         //sort n display the sorted array
-        array<double, DAYS> sorted_temps = temperatures; // copy original array
+        vector<double> sorted_temps = temperatures; // copy original array
         sort(sorted_temps.begin(), sorted_temps.end());
         cout << "Sorted temperatures: ";
         for (const auto& t : sorted_temps) cout << t << " ";
         cout << endl;
 
-        array<double, DAYS> cdsnap;// cold snap simulation
-        cdsnap.fill(-10.0); // fill with -10.0
+        vector<double> cdsnap(temperatures.size(), -10.0);// cold snap simulation
         cout << "cold's snap simulation array: ";
         for(const auto& t : cdsnap) cout << t << " ";
         cout << endl;
